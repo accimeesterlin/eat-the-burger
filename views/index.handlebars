@@ -1,0 +1,34 @@
+<div class="container">
+
+    <div class="main-content">
+        <div class="sidebar">
+            {{#each burgers}} {{#if devoured}}
+                <div>
+                    <p>{{burger_name}}</p>
+                    <button>Devour</button>
+                </div>
+
+            {{/if}} {{/each}}
+        </div>
+
+        <div class="msg">Undevoured vs Devoured</div>
+        <div class="content">
+            {{#each burgers}} {{#unless devoured}}
+                <div>
+                    <p>{{burger_name}}</p>
+                    <button>Devoured</button>
+                </div>
+
+            {{/unless}} {{/each}}
+        </div>
+
+    </div>
+
+    <div class="add-burger">
+        <form action="/add" method="POST">
+            <label for="">Add burger</label>
+            <input type="text" name="burger_name" placeholder="Add your burger...">
+            <button class="btn">Add</button>
+        </form>
+    </div>
+</div>
